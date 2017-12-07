@@ -1,0 +1,8 @@
+# eclipse
+.project
+
+# Pycharm
+.idea
+
+# mac
+.DS_Store
