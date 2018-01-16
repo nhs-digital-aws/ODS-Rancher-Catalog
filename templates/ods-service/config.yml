@@ -1,0 +1,5 @@
+name: NHS Digital - CIS ODS Service
+description: |
+  Stands up a local instance of CIS ODS Service.
+version: 0.1
+category: NHS-Digital
