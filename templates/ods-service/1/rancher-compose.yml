@@ -20,25 +20,25 @@
       description: "Databse User"
       label: "The database username"
       required: true
-      default: postgre
+      default: postgres
       type: "string"
     - variable: "ods_database_host"
       description: "IP of the Database host"
       label: "The IP address of the database host"
       required: true
-      default: 52.215.50.215
+      default: "52.215.50.215"
       type: "string"
     - variable: "ods_database_port"
       description: "Databse Port"
       label: "The default database port"
       required: true
-      default: 5432
+      default: "5432"
       type: "string"
     - variable: "ods_database"
       description: "Database name"
       label: "The database name"
       required: true
-      default: openods
+      default: "openods"
       type: "string"
     - variable: "ods_service_host"
       description: "IP address of ODS API"
@@ -68,7 +68,7 @@
       description: "Splunk indexer host location"
       label: "Splunk indexer IP address"
       required: true
-      default: "1.2.3.4"
+      default: "http://1.2.3.4"
       type: "string"
     - variable: "ods_splunk_indexer_data_port"
       description: "Splunk forwarder data port"
