@@ -1,26 +1,27 @@
 version: '2'
 services:
   ODS-Rest-Api:
-    image: ${ODS_DOCKER_REGISTRY}/ods-rest-api:${ODS_DOCKER_TAG}
+    image: ${ods_docker_registry}/ods-rest-api:${ods_docker_tag}
     environment:
-      DATABASE_URL: postgresql://${ODS_DATABASE_USER}:@${ODS_DATABASE_HOST}:${ODS_DATABASE_PORT}/${ODS_DATABASE}
-      APP_HOSTNAME: http://${ODS_SERVICE_HOST}:${ODS_SERVICE_PORT}/api
+      DATABASE_URL: postgresql://${ods_database_user}:@${ods_database_host}:${ods_database_port}/${ods_database}
+      APP_HOSTNAME: http://${ods_service_host}:${ods_service_port}/api
     ports:
     - ${ODS_SERVICE_PORT}:5000/tcp
     labels:
       io.rancher.container.pull_image: always
     volumes:
-    - ${ODS_SPLUNK_RANCHER_HOST_SHAREDVOLUME_PATH}:${ODS_LOG_FOLDER}
+    - ${ods_splunk_rancher_host_sharedvolume_path}:${ods_log_folder}
     tty: true
     stdin_open: true
 
   splunkuniversalforwarder:
-    hostname: splunkuniversalforwarder-${ODS_SPLUNK_DATASOURCE_LABEL}
+    hostname: splunkuniversalforwarder-${ods_splunk_datasource_label}
     image: splunk/universalforwarder:7.0.0
     environment:
       SPLUNK_START_ARGS: --accept-license
-      SPLUNK_FORWARD_SERVER: ${ODS_SPLUNK_INDEXER_HOST}:${ODS_SPLUNK_INDEXER_DATA_PORT}
-      SPLUNK_ADD: "monitor ${ODS_SPLUNK_FORWARDER_LOGS_MOUNT_PATH}/${ODS_LOG_FILENAME}"
+      SPLUNK_FORWARD_SERVER: ${ods_splunk_indexer_host}:${ods_splunk_indexer_data_port}
+      SPLUNK_ADD: "monitor ${ods_splunk_forwarder_logs_mount_path}/${ods_log_filename}"
     volumes:
-    - ${ODS_SPLUNK_RANCHER_HOST_SHAREDVOLUME_PATH}:${ODS_SPLUNK_FORWARDER_LOGS_MOUNT_PATH}
+    - ${ods_splunk_rancher_host_sharedvolume_path}:${ods_splunk_forwarder_logs_mount_path}
+
 
