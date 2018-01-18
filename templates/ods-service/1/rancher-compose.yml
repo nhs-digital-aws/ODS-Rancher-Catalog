@@ -56,7 +56,7 @@
       description: "Location for splunk shared volume"
       label: "Splunk shared volume path"
       required: true
-      default: portable
+      default: "/var/log/ods"
       type: "string"
     - variable: "ods_splunk_datasource_label"
       description: "Label for splunk datasource"
