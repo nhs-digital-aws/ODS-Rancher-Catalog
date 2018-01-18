@@ -19,3 +19,208 @@ ODS-Rest-Api:
 
 splunkuniversalforwarder:
   scale: 1
+
+
+
+```
+.catalog:
+  name: "NHS Digital - ODS App"
+  version: "0.1"
+  description: "NHS Digital - ODS App"
+  minimum_rancher_version: "v1.1.4"
+  questions:
+    - variable: "auth_version"
+      description: "Which version of the app do you want to deploy?"
+      label: "Version"
+      required: true
+      default: portable
+      type: "string"
+    - variable: "registry_url"
+      description: "Please enter the url of your registry"
+      label: "e.g. registry.nhs.uk:5000"
+      required: true
+      default: 446537062602.dkr.ecr.eu-west-2.amazonaws.com/cishackday
+      type: "string"
+    - variable: "env_shortcode"
+      description: "Please enter the shortcode of your environment"
+      label: "Environment Shortcode"
+      required: true
+      default: lh
+      type: "string"
+    - variable: "gluster_url"
+      description: "Please enter your Gluster URL"
+      label: "Gluster Service"
+      required: true
+      type: "string"
+      default: "nfs.cis-externals.rancher.internal"
+    - variable: "fqdn"
+      description: "Please enter your FQDN"
+      label: "Service FQDN"
+      required: true
+      type: "string"
+      default: "NNN.cis.spine2.ncrs.nhs.uk"
+    - variable: "portal_cookie_domain"
+      description: "Please enter your cookie domain"
+      label: "Cookie Domain"
+      required: true
+      type: "string"
+      default: ".cis.spine2.ncrs.nhs.uk"
+    - variable: "auth_service_subject"
+      description: "Please enter your auth_service_subject"
+      label: "auth_service_subject"
+      required: true
+      type: "string"
+#      default: "abc123"
+    - variable: "auth_crl_file1"
+      description: "Please enter your auth_crl_file1"
+      label: "auth_crl_file1"
+      required: true
+      type: "string"
+      default: "fa8d522408ae23f60068fc9e71fada376c8ba42f"
+    - variable: "auth_crl_file2"
+      description: "Please enter your auth_crl_file2"
+      label: "auth_crl_file2"
+      required: true
+      type: "string"
+      default: "124a88b782c09809c3dca6c6697b09e52ef0f605"
+    - variable: "auth_crl_file3"
+      description: "Please enter your auth_crl_file3"
+      label: "auth_crl_file3"
+      required: true
+      type: "string"
+      default: "c1e86afb603027f500cb93022e6b9b0be4df1f8e"
+    - variable: "directoryServer"
+      description: "Please enter your Directory server including port"
+      label: "Directory Server"
+      required: true
+      type: "string"
+      default: "dfa.auth-local.rancher.internal:10389"
+    - variable: "ldap_auth_username"
+      description: "Please enter your LDAP Username for Auth queries"
+      label: "LDAP Auth Username"
+      required: true
+      type: "string"
+#      default: "cn=admin"
+    - variable: "ldap_auth_password"
+      description: "Please enter your LDAP Password for Auth queries"
+      label: "LDAP Auth Password"
+      required: true
+      type: "string"
+      default: "Password1"
+    - variable: "ldap_role_username"
+      description: "Please enter your LDAP Username for Role queries"
+      label: "LDAP Role Username"
+      required: true
+      type: "string"
+#      default: "cn=admin"
+    - variable: "ldap_role_password"
+      description: "Please enter your LDAP Password for Role queries"
+      label: "LDAP Role Password"
+      required: true
+      type: "string"
+      default: "Password1"
+    - variable: "use_aws_s3"
+      description: "Use AWS S3 as backup file source"
+      label: "Enter YES to use AWS S3 as OpenDJ backup file source"
+      required: false
+      type: "string"
+      default: "PLEASE"
+    - variable: "changelog_hostname"
+      description: "Enter Changelog hostname"
+      label: "Enter Changelog hostname"
+      required: true
+      type: "string"
+      default: "djm.auth-local.rancher.internal"
+    - variable: "changelog_publisher_password"
+      description: "Enter Changelog publisher password"
+      label: "Enter Changelog publisher password"
+      required: true
+      type: "string"
+      default: ""
+    - variable: "changelog_logs_retention"
+      description: "Enter Change logs retention period"
+      label: "Enter Change logs retention period"
+      required: true
+      type: "string"
+      default: "7"
+    - variable: "tag_name"
+      description: "Please enter the tag name"
+      label: "tag_name"
+      required: true
+      type: "string"
+    - variable: "s3_bucket_name"
+      description: "Please enter the name of the S3 bucket the backup will be transferred to"
+      label: "S3 Bucket"
+      required: true
+      type: "string"
+    - variable: "aws_account_id"
+      description: "Please enter the numeric AWS account ID"
+      label: "AWS Account"
+      required: true
+      type: "string"
+    - variable: "pemfile"
+      description: "The name of the PEM file"
+      label: "e.g. dir.lh.iam.spine2.ncrs.nhs.uk"
+      required: true
+      default: dir.lh.iam.spine2.ncrs.nhs.uk
+      type: "string"
+```
+
+
+
+
+ - variable: "ODS_SERVICE_HOST"
+      description: "IP address of ODS API"
+      label: "ODS API address"
+      required: true
+      default: "http://1.2.3.4"
+      type: "string"
+
+  - variable: "ODS_SERVICE_PORT"
+      description: "Port of ODS API"
+      label: "ODS Service port"
+      required: true
+      default: "8080"
+      type: "string"
+
+  - variable: "ODS_SPLUNK_RANCHER_HOST_SHAREDVOLUME_PATH"
+      description: "Location for splunk shared volume"
+      label: "Splunk shared volume path"
+      required: true
+      default: portable
+      type: "string"
+
+  - variable: "ODS_SPLUNK_DATASOURCE_LABEL"
+      description: "Label for splunk datasource"
+      label: "Splunk datasource label"
+      required: true
+      default: "dev"
+      type: "string"
+
+  - variable: "ODS_SPLUNK_INDEXER_HOST"
+      description: "Splunk indexer host location"
+      label: "Splunk indexer IP address"
+      required: true
+      default: "1.2.3.4"
+      type: "string"
+
+  - variable: "ODS_SPLUNK_FORWARDER_LOGS_MOUNT_PATH"
+      description: "Splunk forwarder logs mount path"
+      label: "Splunk indexer IP address"
+      required: true
+      default: "/var/log/ods"
+      type: "string"
+
+  - variable: "ODS_SPLUNK_FORWARDER_LOGS_MOUNT_PATH"
+      description: "Splunk forwarder logs mount path"
+      label: "Splunk forwarder mount path"
+      required: true
+      default: "/var/log/ods"
+      type: "string"
+
+  - variable: "ODS_LOG_FILENAME"
+      description: "ODS log filename"
+      label: "Small furry animal with sharp teeth"
+      required: true
+      default: "ods.log"
+      type: "string"
