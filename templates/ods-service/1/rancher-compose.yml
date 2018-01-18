@@ -44,7 +44,7 @@
       description: "IP address of ODS API"
       label: "ODS API address"
       required: true
-      default: "http://1.2.3.4"
+      default: "https://ods-tf.ods-tf.cis.spine2.ncrs.nhs.uk"
       type: "string"
     - variable: "ODS_SERVICE_PORT"
       description: "Port of ODS API"
@@ -70,11 +70,11 @@
       required: true
       default: "1.2.3.4"
       type: "string"
-    - variable: "ODS_SPLUNK_FORWARDER_LOGS_MOUNT_PATH"
-      description: "Splunk forwarder logs mount path"
-      label: "Splunk indexer IP address"
+    - variable: "ODS_SPLUNK_INDEXER_DATA_PORT"
+      description: "Splunk forwarder data port"
+      label: "Splunk indexer data port"
       required: true
-      default: "/var/log/ods"
+      default: "9997"
       type: "string"
     - variable: "ODS_SPLUNK_FORWARDER_LOGS_MOUNT_PATH"
       description: "Splunk forwarder logs mount path"
@@ -84,7 +84,7 @@
       type: "string"
     - variable: "ODS_LOG_FILENAME"
       description: "ODS log filename"
-      label: "Small furry animal with sharp teeth"
+      label: "Log filename"
       required: true
       default: "ods.log"
       type: "string"
