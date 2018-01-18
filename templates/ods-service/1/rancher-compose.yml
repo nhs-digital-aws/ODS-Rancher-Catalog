@@ -3,6 +3,43 @@
   version: "0.1"
   description: "NHS Digital - ODS App"
   minimum_rancher_version: "v1.1.4"
+  questions:
+    - variable: "ODS_DOCKER_REGISTRY"
+      description: "The address of ODS Docker registry"
+      label: "Docker Registry"
+      required: true
+      default: markharrison17
+      type: "string"
+    - variable: "ODS_DOCKER_TAG"
+      description: "Docker Tag"
+      label: "For example latest"
+      required: true
+      default: ptl
+      type: "string"
+    - variable: "ODS_DATABASE_USER"
+      description: "Databse User"
+      label: "The database username"
+      required: true
+      default: postgre
+      type: "string"
+    - variable: "ODS_DATABASE_HOST"
+      description: "IP of the Database host"
+      label: "The IP address of the database host"
+      required: true
+      default: 52.215.50.215
+      type: "string"
+    - variable: "ODS_DATABASE_PORT"
+      description: "Databse Port"
+      label: "The default database port"
+      required: true
+      default: 5432
+      type: "string"
+    - variable: "ODS_DATABASE"
+      description: "Database name"
+      label: "The database name"
+      required: true
+      default: openods
+      type: "string"
 
 ODS-Rest-Api:
   scale: 1
