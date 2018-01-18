@@ -32,7 +32,7 @@
       description: "Databse Port"
       label: "The default database port"
       required: true
-      default: 5432
+      default: "5432"
       type: "string"
     - variable: "ods_database"
       description: "Database name"
