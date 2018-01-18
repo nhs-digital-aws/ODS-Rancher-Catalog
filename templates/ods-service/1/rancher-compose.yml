@@ -40,54 +40,7 @@
       required: true
       default: openods
       type: "string"
-    - variable: "ODS_SERVICE_HOST"
-      description: "IP address of ODS API"
-      label: "ODS API address"
-      required: true
-      default: "https://ods-tf.ods-tf.cis.spine2.ncrs.nhs.uk"
-      type: "string"
-    - variable: "ODS_SERVICE_PORT"
-      description: "Port of ODS API"
-      label: "ODS Service port"
-      required: true
-      default: "8080"
-      type: "string"
-    - variable: "ODS_SPLUNK_RANCHER_HOST_SHAREDVOLUME_PATH"
-      description: "Location for splunk shared volume"
-      label: "Splunk shared volume path"
-      required: true
-      default: portable
-      type: "string"
-    - variable: "ODS_SPLUNK_DATASOURCE_LABEL"
-      description: "Label for splunk datasource"
-      label: "Splunk datasource label"
-      required: true
-      default: "dev"
-      type: "string"
-    - variable: "ODS_SPLUNK_INDEXER_HOST"
-      description: "Splunk indexer host location"
-      label: "Splunk indexer IP address"
-      required: true
-      default: "1.2.3.4"
-      type: "string"
-    - variable: "ODS_SPLUNK_INDEXER_DATA_PORT"
-      description: "Splunk forwarder data port"
-      label: "Splunk indexer data port"
-      required: true
-      default: "9997"
-      type: "string"
-    - variable: "ODS_SPLUNK_FORWARDER_LOGS_MOUNT_PATH"
-      description: "Splunk forwarder logs mount path"
-      label: "Splunk forwarder mount path"
-      required: true
-      default: "/var/log/ods"
-      type: "string"
-    - variable: "ODS_LOG_FILENAME"
-      description: "ODS log filename"
-      label: "Log filename"
-      required: true
-      default: "ods.log"
-      type: "string"
+
 
 ODS-Rest-Api:
   scale: 1
