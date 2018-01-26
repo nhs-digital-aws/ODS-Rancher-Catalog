@@ -6,7 +6,7 @@ services:
       DATABASE_URL: postgresql://${ods_database_user}:@${ods_database_host}:${ods_database_port}/${ods_database}
       APP_HOSTNAME: http://${ods_service_host}:${ods_service_port}/api
     ports:
-    - ${ODS_SERVICE_PORT}:5000/tcp
+    - ${ods_service_host}:5000/tcp
     labels:
       io.rancher.container.pull_image: always
     volumes:
