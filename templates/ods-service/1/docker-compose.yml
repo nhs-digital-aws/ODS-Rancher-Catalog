@@ -3,7 +3,7 @@ services:
   ODS-Rest-Api:
     image: ${ods_docker_registry}/ods-rest-api:${ods_docker_tag}
     environment:
-      DATABASE_URL: postgresql://${ods_database_user}:@${ods_database_host}:${ods_database_port}/${ods_database}
+      DATABASE_URL: postgresql://${ods_database_user}:openods42@${ods_database_host}:${ods_database_port}/${ods_database}
       APP_HOSTNAME: http://${ods_service_host}:${ods_service_port}/api
     ports:
     - ${ods_service_port}:5000/tcp
